@@ -1,3 +1,17 @@
+:root {
+  --base-speed: 60s;
+  --mercury-speed: 88;
+  --venus-speed: 224.7;
+  --earth-speed: 365.25;
+  --earth-orbit: 88;
+  --mercury-orbit: calc(
+    var(--base-speed) * (var(--mercury-speed) / var(--earth-speed))
+  );
+  --venus-orbit: calc(
+    var(--base-speed) * (var(--venus-speed) / var(--earth-speed))
+  );
+}
+
 * {
   box-sizing: border-box;
 }
@@ -6,10 +20,8 @@ body {
   margin: 0;
   padding: 0;
   background-size: contain;
-  /* background-repeat: no-repeat; */
-  background-color: rgb(21, 21, 21);
-  /* background: url("./assets/background.webp"); */
-  background: radial-gradient(circle, #4a4e60, #313543, #101113);
+  background-color: #0b0c0c;
+  background: radial-gradient(circle, #27292e, #1f2023, #0b0c0c);
   width: 100%;
   min-height: 100vh;
 }
@@ -32,7 +44,7 @@ body {
   position: absolute;
   left: calc(50vw - 10px);
   top: calc(50vh - 10px);
-  animation: 6s linear infinite orbitMercury;
+  animation: var(--mercury-orbit) linear infinite mercuryOrbit;
 }
 
 .venus {
@@ -43,7 +55,7 @@ body {
   position: absolute;
   left: calc(50vw - 20px);
   top: calc(50vh - 20px);
-  animation: 6s linear infinite venusMercury;
+  animation: var(--venus-orbit) linear infinite venusOrbit;
 }
 
 .mercury-orbit {
@@ -53,10 +65,20 @@ body {
   height: 180px;
   width: 180px;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px #bdbdbd;
+  box-shadow: 0 0 0 1px #5b5e66;
 }
 
-@keyframes orbitMercury {
+.venus-orbit {
+  position: absolute;
+  top: calc(50vh - 130px);
+  left: calc(50vw - 130px);
+  height: 260px;
+  width: 260px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #5b5e66;
+}
+
+@keyframes mercuryOrbit {
   from {
     transform: rotate(0deg) translateX(90px) rotate(0deg);
   }
@@ -65,7 +87,7 @@ body {
   }
 }
 
-@keyframes venusMercury {
+@keyframes venusOrbit {
   from {
     transform: rotate(0deg) translateX(130px) rotate(0deg);
   }
