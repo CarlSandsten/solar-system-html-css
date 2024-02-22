@@ -35,6 +35,17 @@ body {
   animation: 6s linear infinite orbitMercury;
 }
 
+.venus {
+  background: url("./assets/venus.svg");
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  left: calc(50vw - 20px);
+  top: calc(50vh - 20px);
+  animation: 6s linear infinite venusMercury;
+}
+
 .mercury-orbit {
   position: absolute;
   top: calc(50vh - 90px);
@@ -51,5 +62,14 @@ body {
   }
   to {
     transform: rotate(360deg) translateX(90px) rotate(-360deg);
+  }
+}
+
+@keyframes venusMercury {
+  from {
+    transform: rotate(0deg) translateX(130px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(130px) rotate(-360deg);
   }
 }
