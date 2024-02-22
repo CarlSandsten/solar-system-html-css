@@ -3,16 +3,19 @@ Variables
 ******************************************************************************/
 :root {
   --base-time: 60s;
+  /* Days it takes around the sun (approx.) */
   --mercury-speed: 88;
   --venus-speed: 224.7;
   --earth-speed: 365.25;
-  --earth-orbit: 88;
+
+  /* Orbital movement */
   --mercury-orbit: calc(
     var(--base-time) * (var(--mercury-speed) / var(--earth-speed))
   );
   --venus-orbit: calc(
     var(--base-time) * (var(--venus-speed) / var(--earth-speed))
   );
+  --earth-orbit: calc(var(--base-time));
 }
 
 /******************************************************************************
@@ -35,43 +38,55 @@ body {
 /******************************************************************************
 The Sun and Planets
 ******************************************************************************/
-.sun {
-  background: url("./assets/sun.svg");
+.sun,
+.mercury,
+.venus,
+.earth {
+  position: absolute;
   background-size: cover;
+}
+
+.sun {
+  background-image: url("./assets/sun.svg");
   height: 90px;
   width: 90px;
-  position: absolute;
   left: calc(50vw - 45px);
   top: calc(50vh - 45px);
 }
 
 .mercury {
-  background: url("./assets/mercury.svg");
-  background-size: cover;
+  background-image: url("./assets/mercury.svg");
   height: 20px;
   width: 20px;
-  position: absolute;
   left: calc(50vw - 10px);
   top: calc(50vh - 10px);
   animation: var(--mercury-orbit) linear infinite mercuryOrbit;
 }
 
 .venus {
-  background: url("./assets/venus.svg");
-  background-size: cover;
+  background-image: url("./assets/venus.svg");
   height: 40px;
   width: 40px;
-  position: absolute;
   left: calc(50vw - 20px);
   top: calc(50vh - 20px);
   animation: var(--venus-orbit) linear infinite venusOrbit;
+}
+
+.earth {
+  background-image: url("./assets/earth.svg");
+  height: 46px;
+  width: 46px;
+  left: calc(50vw - 23px);
+  top: calc(50vh - 23px);
+  animation: var(--earth-orbit) linear infinite earthOrbit;
 }
 
 /******************************************************************************
 The Orbits
 ******************************************************************************/
 .mercury-orbit,
-.venus-orbit {
+.venus-orbit,
+.earth-orbit {
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 0 1px #5b5e66;
@@ -91,12 +106,19 @@ The Orbits
   width: 300px;
 }
 
+.earth-orbit {
+  top: calc(50vh - 200px);
+  left: calc(50vw - 200px);
+  height: 400px;
+  width: 400px;
+}
+
 /******************************************************************************
 Keyframe Animations
 ******************************************************************************/
 @keyframes mercuryOrbit {
   from {
-    transform: rotate(30deg) translate(70px) rotate(30deg);
+    transform: rotate(0deg) translate(70px) rotate(0deg);
   }
   to {
     transform: rotate(360deg) translate(70px) rotate(-360deg);
@@ -109,5 +131,14 @@ Keyframe Animations
   }
   to {
     transform: rotate(360deg) translateX(150px) rotate(-360deg);
+  }
+}
+
+@keyframes earthOrbit {
+  from {
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(200px) rotate(-360deg);
   }
 }
