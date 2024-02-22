@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -28,7 +32,17 @@ body {
   position: absolute;
   left: calc(50vw - 10px);
   top: calc(50vh - 10px);
-  animation: 2s linear infinite orbitMercury;
+  animation: 6s linear infinite orbitMercury;
+}
+
+.mercury-orbit {
+  position: absolute;
+  top: calc(50vh - 90px);
+  left: calc(50vw - 90px);
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #bdbdbd;
 }
 
 @keyframes orbitMercury {
