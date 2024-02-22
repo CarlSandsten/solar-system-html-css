@@ -11,4 +11,4 @@ I wanted to showcase the following:
 
 ## Can I Use it?
 
-Feel free to use this project as it's not an official STEAMius project and as long as it's not being used commercially. Teachers and homeschool tutors are more than welcome use the resource without restriction in their classrooms or at home.
+Feel free to use this project as it's not an official STEAMius project and as long as it's not being used commercially. Teachers and homeschool tutors are more than welcome to use the resources withing this repository without restriction in their classrooms or at home.
