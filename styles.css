@@ -1,14 +1,14 @@
 :root {
-  --base-speed: 60s;
+  --base-time: 60s;
   --mercury-speed: 88;
   --venus-speed: 224.7;
   --earth-speed: 365.25;
   --earth-orbit: 88;
   --mercury-orbit: calc(
-    var(--base-speed) * (var(--mercury-speed) / var(--earth-speed))
+    var(--base-time) * (var(--mercury-speed) / var(--earth-speed))
   );
   --venus-orbit: calc(
-    var(--base-speed) * (var(--venus-speed) / var(--earth-speed))
+    var(--base-time) * (var(--venus-speed) / var(--earth-speed))
   );
 }
 
@@ -29,11 +29,11 @@ body {
 .sun {
   background: url("./assets/sun.svg");
   background-size: cover;
-  height: 120px;
-  width: 120px;
+  height: 90px;
+  width: 90px;
   position: absolute;
-  left: calc(50vw - 60px);
-  top: calc(50vh - 60px);
+  left: calc(50vw - 45px);
+  top: calc(50vh - 45px);
 }
 
 .mercury {
@@ -58,40 +58,41 @@ body {
   animation: var(--venus-orbit) linear infinite venusOrbit;
 }
 
-.mercury-orbit {
+.mercury-orbit,
+.venus-orbit {
   position: absolute;
-  top: calc(50vh - 90px);
-  left: calc(50vw - 90px);
-  height: 180px;
-  width: 180px;
   border-radius: 50%;
   box-shadow: 0 0 0 1px #5b5e66;
 }
 
+.mercury-orbit {
+  top: calc(50vh - 70px);
+  left: calc(50vw - 70px);
+  height: 140px;
+  width: 140px;
+}
+
 .venus-orbit {
-  position: absolute;
-  top: calc(50vh - 130px);
-  left: calc(50vw - 130px);
-  height: 260px;
-  width: 260px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px #5b5e66;
+  top: calc(50vh - 150px);
+  left: calc(50vw - 150px);
+  height: 300px;
+  width: 300px;
 }
 
 @keyframes mercuryOrbit {
   from {
-    transform: rotate(0deg) translateX(90px) rotate(0deg);
+    transform: rotate(30deg) translate(70px) rotate(30deg);
   }
   to {
-    transform: rotate(360deg) translateX(90px) rotate(-360deg);
+    transform: rotate(360deg) translate(70px) rotate(-360deg);
   }
 }
 
 @keyframes venusOrbit {
   from {
-    transform: rotate(0deg) translateX(130px) rotate(0deg);
+    transform: rotate(0deg) translateX(150px) rotate(0deg);
   }
   to {
-    transform: rotate(360deg) translateX(130px) rotate(-360deg);
+    transform: rotate(360deg) translateX(150px) rotate(-360deg);
   }
 }
