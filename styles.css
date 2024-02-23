@@ -48,10 +48,10 @@ The Sun and Planets
 
 .sun {
   background-image: url("./assets/sun.svg");
-  height: 90px;
-  width: 90px;
-  left: calc(50vw - 45px);
-  top: calc(50vh - 45px);
+  height: 70px;
+  width: 70px;
+  left: calc(50vw - 35px);
+  top: calc(50vh - 35px);
 }
 
 .mercury {
