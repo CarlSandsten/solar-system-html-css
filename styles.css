@@ -8,6 +8,7 @@ Variables
   --venus-speed: 224.7;
   --earth-speed: 365.25;
   --mars-speed: 687;
+  --jupiter-speed: 4383;
 
   /* Orbital movement */
   --mercury-orbit: calc(
@@ -19,6 +20,9 @@ Variables
   --earth-orbit: calc(var(--base-time));
   --mars-orbit: calc(
     var(--base-time) * (var(--mars-speed) / var(--earth-speed))
+  );
+  --jupiter-orbit: calc(
+    var(--base-time) * (var(--jupiter-speed) / var(--earth-speed))
   );
 }
 
@@ -46,7 +50,8 @@ The Sun and Planets
 .mercury,
 .venus,
 .earth,
-.mars {
+.mars,
+.jupiter {
   position: absolute;
   background-size: cover;
 }
@@ -95,13 +100,23 @@ The Sun and Planets
   animation: var(--mars-orbit) linear infinite marsOrbit;
 }
 
+.jupiter {
+  background-image: url("./assets/jupiter.svg");
+  height: 100px;
+  width: 100px;
+  left: calc(50vw - 50px);
+  top: calc(50vh - 50px);
+  animation: var(--jupiter-orbit) linear infinite jupiterOrbit;
+}
+
 /******************************************************************************
 The Orbits
 ******************************************************************************/
 .mercury-orbit,
 .venus-orbit,
 .earth-orbit,
-.mars-orbit {
+.mars-orbit,
+.jupiter-orbit {
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 0 1px #5b5e66;
@@ -133,6 +148,13 @@ The Orbits
   left: calc(50vw - 250px);
   height: 500px;
   width: 500px;
+}
+
+.jupiter-orbit {
+  top: calc(50vh - 400px);
+  left: calc(50vw - 400px);
+  height: 800px;
+  width: 800px;
 }
 
 /******************************************************************************
@@ -171,5 +193,14 @@ Keyframe Animations
   }
   to {
     transform: rotate(360deg) translateX(250px) rotate(-360deg);
+  }
+}
+
+@keyframes jupiterOrbit {
+  from {
+    transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(400px) rotate(-360deg);
   }
 }
