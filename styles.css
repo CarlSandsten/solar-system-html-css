@@ -7,6 +7,7 @@ Variables
   --mercury-speed: 88;
   --venus-speed: 224.7;
   --earth-speed: 365.25;
+  --mars-speed: 687;
 
   /* Orbital movement */
   --mercury-orbit: calc(
@@ -16,6 +17,9 @@ Variables
     var(--base-time) * (var(--venus-speed) / var(--earth-speed))
   );
   --earth-orbit: calc(var(--base-time));
+  --mars-orbit: calc(
+    var(--base-time) * (var(--mars-speed) / var(--earth-speed))
+  );
 }
 
 /******************************************************************************
@@ -41,7 +45,8 @@ The Sun and Planets
 .sun,
 .mercury,
 .venus,
-.earth {
+.earth,
+.mars {
   position: absolute;
   background-size: cover;
 }
@@ -56,10 +61,10 @@ The Sun and Planets
 
 .mercury {
   background-image: url("./assets/mercury.svg");
-  height: 20px;
-  width: 20px;
-  left: calc(50vw - 10px);
-  top: calc(50vh - 10px);
+  height: 16px;
+  width: 16px;
+  left: calc(50vw - 8px);
+  top: calc(50vh - 8px);
   animation: var(--mercury-orbit) linear infinite mercuryOrbit;
 }
 
@@ -81,12 +86,22 @@ The Sun and Planets
   animation: var(--earth-orbit) linear infinite earthOrbit;
 }
 
+.mars {
+  background-image: url("./assets/mars.svg");
+  height: 26px;
+  width: 26px;
+  left: calc(50vw - 13px);
+  top: calc(50vh - 13px);
+  animation: var(--mars-orbit) linear infinite marsOrbit;
+}
+
 /******************************************************************************
 The Orbits
 ******************************************************************************/
 .mercury-orbit,
 .venus-orbit,
-.earth-orbit {
+.earth-orbit,
+.mars-orbit {
   position: absolute;
   border-radius: 50%;
   box-shadow: 0 0 0 1px #5b5e66;
@@ -111,6 +126,13 @@ The Orbits
   left: calc(50vw - 200px);
   height: 400px;
   width: 400px;
+}
+
+.mars-orbit {
+  top: calc(50vh - 250px);
+  left: calc(50vw - 250px);
+  height: 500px;
+  width: 500px;
 }
 
 /******************************************************************************
@@ -140,5 +162,14 @@ Keyframe Animations
   }
   to {
     transform: rotate(360deg) translateX(200px) rotate(-360deg);
+  }
+}
+
+@keyframes marsOrbit {
+  from {
+    transform: rotate(0deg) translateX(250px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(250px) rotate(-360deg);
   }
 }
