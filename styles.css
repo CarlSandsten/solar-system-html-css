@@ -50,6 +50,10 @@ img {
   user-select: none;
 }
 
+p {
+  margin: 0;
+}
+
 .box {
   display: flex;
   align-items: center;
@@ -71,14 +75,30 @@ img {
   padding: 0 50px;
   width: 100vw;
   height: 120px;
-  /* background: #181c1f; */
-  /* box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15); */
+  background: #17181a;
+  box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
 .icon {
   width: 70px;
   height: 75px;
+}
+
+.page-title {
+  display: flex;
+  justify-content: c;
+  flex-direction: column;
+  padding-left: 20px;
+  color: #fff;
+  font-family: "Luckiest Guy";
+  font-size: 30px;
+  line-height: 1;
+  user-select: none;
+}
+
+.page-subtitle {
+  color: #8da3e3;
 }
 
 /******************************************************************************
