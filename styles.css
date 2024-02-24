@@ -85,9 +85,16 @@ p {
   height: 75px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  width: 150px;
+  height: 50px;
+}
+
 .page-title {
   display: flex;
-  justify-content: c;
+  justify-content: center;
   flex-direction: column;
   padding-left: 20px;
   color: #fff;
