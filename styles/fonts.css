@@ -1,0 +1,5 @@
+@font-face {
+  font-family: "wonderboys";
+  src: url("../assets/fonts/wonderboys.ttf") format("truetype"),
+    url("../assets/fonts/wonderboys.ttf") format("opentype");
+}

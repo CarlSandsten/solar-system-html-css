@@ -1,0 +1,91 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  user-select: none;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: radial-gradient(circle, #27292e, #1f2023, #0b0c0c);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+input {
+  appearance: none;
+}
+
+a,
+label,
+input,
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* xtra */
+img {
+  position: absolute;
+  user-select: none;
+}
+
+/******************************************************************************
+Variables
+******************************************************************************/
+:root {
+  --base-time: 60s;
+  /* Days it takes around the sun (approx.) */
+  --mercury-speed: 88;
+  --venus-speed: 224.7;
+  --earth-speed: 365.25;
+  --mars-speed: 687;
+  --jupiter-speed: 4383;
+
+  /* Orbital movement */
+  --mercury-orbit: calc(
+    var(--base-time) * (var(--mercury-speed) / var(--earth-speed))
+  );
+  --venus-orbit: calc(
+    var(--base-time) * (var(--venus-speed) / var(--earth-speed))
+  );
+  --earth-orbit: calc(var(--base-time));
+  --mars-orbit: calc(
+    var(--base-time) * (var(--mars-speed) / var(--earth-speed))
+  );
+  --jupiter-orbit: calc(
+    var(--base-time) * (var(--jupiter-speed) / var(--earth-speed))
+  );
+}
+
+/******************************************************************************
+Elements
+******************************************************************************/
+
+.box {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 960px;
+}
+
+.img-wrapper {
+  position: relative;
+}
