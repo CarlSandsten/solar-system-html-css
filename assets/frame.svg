@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" fill="#FFFFFF">
+            <path d="M20,140 L20,174 C20,177.313708 22.6862915,180 26,180 L26,180 L60,180 L60,200 L12,200 C5.372583,200 8.11624501e-16,194.627417 0,188 L0,188 L0,140 L20,140 Z M200,140 L200,188 C200,194.627417 194.627417,200 188,200 L188,200 L140,200 L140,180 L174,180 C177.313708,180 180,177.313708 180,174 L180,174 L180,140 L200,140 Z M60,0 L60,20 L26,20 C22.6862915,20 20,22.6862915 20,26 L20,26 L20,60 L0,60 L0,12 C-8.11624501e-16,5.372583 5.372583,1.21743675e-15 12,0 L12,0 L60,0 Z M188,0 C194.627417,-1.21743675e-15 200,5.372583 200,12 L200,12 L200,60 L180,60 L180,26 C180,22.6862915 177.313708,20 174,20 L174,20 L140,20 L140,0 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
