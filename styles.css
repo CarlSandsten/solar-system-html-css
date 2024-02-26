@@ -187,10 +187,10 @@ Keyframe Animations
 
 @keyframes marsOrbit {
   from {
-    transform: rotate(0deg) translateX(250px) rotate(0deg);
+    transform: rotate(0deg) translateX(225px) rotate(0deg);
   }
   to {
-    transform: rotate(360deg) translateX(250px) rotate(-360deg);
+    transform: rotate(360deg) translateX(225px) rotate(-360deg);
   }
 }
 
