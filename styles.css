@@ -1,9 +1,9 @@
 #topbar {
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
   padding: 0 50px;
   width: 100vw;
   height: 120px;
@@ -128,10 +128,10 @@ The Orbits
 }
 
 .venus-orbit {
-  top: calc(50vh - 150px);
-  left: calc(50vw - 150px);
-  height: 300px;
-  width: 300px;
+  top: calc(50vh - 125px);
+  left: calc(50vw - 125px);
+  height: 250px;
+  width: 250px;
 }
 
 .earth-orbit {
